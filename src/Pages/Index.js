@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import PostPreview from "./PostPreview";
-
 /*
 2) On Index Page, make an initial request to <code>https://jsonplaceholder.typicode.com/posts</code> to get all the posts. <br/>
     While the request is in progress, display a <code>Loader</code> component. <br/>
@@ -32,7 +31,9 @@ const Buttons = ({ pageHandler, length }) => {
 
 export const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
   const [allData, setAllData] = useState(null);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
